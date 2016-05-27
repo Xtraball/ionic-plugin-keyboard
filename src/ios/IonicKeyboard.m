@@ -1,10 +1,10 @@
 #import "IonicKeyboard.h"
-// #import "UIWebViewExtension.h"
+#import "UIWebViewExtension.h"
 #import <Cordova/CDVAvailability.h>
 
 @implementation IonicKeyboard
 
-// @synthesize hideKeyboardAccessoryBar = _hideKeyboardAccessoryBar;
+@synthesize hideKeyboardAccessoryBar = _hideKeyboardAccessoryBar;
 @synthesize disableScroll = _disableScroll;
 //@synthesize styleDark = _styleDark;
 
@@ -14,7 +14,7 @@
     __weak IonicKeyboard* weakSelf = self;
 
     //set defaults
-    // self.hideKeyboardAccessoryBar = YES;
+    self.hideKeyboardAccessoryBar = YES;
     self.disableScroll = NO;
     //self.styleDark = NO;
 
@@ -63,23 +63,23 @@
 }
 
 
-// - (BOOL)hideKeyboardAccessoryBar {
-//     return _hideKeyboardAccessoryBar;
-// }
-//
-// - (void)setHideKeyboardAccessoryBar:(BOOL)hideKeyboardAccessoryBar {
-//     if (hideKeyboardAccessoryBar == _hideKeyboardAccessoryBar || ![self.webView isKindOfClass:[UIWebView class]]) {
-//         return;
-//     }
-//     if (hideKeyboardAccessoryBar) {
-//         ((UIWebView*)self.webView).hackishlyHidesInputAccessoryView = YES;
-//     }
-//     else {
-//         ((UIWebView*)self.webView).hackishlyHidesInputAccessoryView = NO;
-//     }
-//
-//     _hideKeyboardAccessoryBar = hideKeyboardAccessoryBar;
-// }
+ - (BOOL)hideKeyboardAccessoryBar {
+     return _hideKeyboardAccessoryBar;
+ }
+
+ - (void)setHideKeyboardAccessoryBar:(BOOL)hideKeyboardAccessoryBar {
+     if (hideKeyboardAccessoryBar == _hideKeyboardAccessoryBar || ![self.webView isKindOfClass:[UIWebView class]]) {
+         return;
+     }
+     if (hideKeyboardAccessoryBar) {
+         ((UIWebView*)self.webView).hackishlyHidesInputAccessoryView = YES;
+     }
+     else {
+         ((UIWebView*)self.webView).hackishlyHidesInputAccessoryView = NO;
+     }
+
+     _hideKeyboardAccessoryBar = hideKeyboardAccessoryBar;
+ }
 
 /*
 - (BOOL)styleDark {
@@ -129,15 +129,15 @@
     }
 }
 
-// - (void) hideKeyboardAccessoryBar:(CDVInvokedUrlCommand*)command {
-//     if (!command.arguments || ![command.arguments count]){
-//       return;
-//     }
-//     id value = [command.arguments objectAtIndex:0];
-//     if (value != [NSNull null]) {
-//       self.hideKeyboardAccessoryBar = [value boolValue];
-//     }
-// }
+ - (void) hideKeyboardAccessoryBar:(CDVInvokedUrlCommand*)command {
+     if (!command.arguments || ![command.arguments count]){
+       return;
+     }
+     id value = [command.arguments objectAtIndex:0];
+     if (value != [NSNull null]) {
+       self.hideKeyboardAccessoryBar = [value boolValue];
+     }
+ }
 
 - (void) close:(CDVInvokedUrlCommand*)command {
     [self.webView endEditing:YES];
