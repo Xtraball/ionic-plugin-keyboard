@@ -3,12 +3,12 @@ Keyboard
 
 The `cordova.plugins.Keyboard` object provides functions to make interacting with the keyboard easier, and fires events to indicate that the keyboard will hide/show.
 
-    cordova plugin add ionic-plugin-keyboard
+    cordova plugin add ionic-plugin-keyboard --save
 
 Methods
 -------
 
-- ~~cordova.plugins.Keyboard.hideKeyboardAccessoryBar~~ (**removed in 2.0, see below**)
+- cordova.plugins.Keyboard.hideKeyboardAccessoryBar
 - cordova.plugins.Keyboard.close
 - cordova.plugins.Keyboard.disableScroll
 - cordova.plugins.Keyboard.show
@@ -30,10 +30,8 @@ These events are fired on the window.
 
 # API reference
 
-~~Keyboard.hideKeyboardAccessoryBar~~
+Keyboard.hideKeyboardAccessoryBar
 =================
-
-**NOTE: This method started causing apps to be rejected from the App Store, so has been removed until a workaround is found.**
 
 Hide the keyboard accessory bar with the next, previous and done buttons.
 
@@ -88,7 +86,7 @@ Supported Platforms
 native.keyboardshow
 =================
 
-This event fires when the keyboard will be shown
+This event fires when the keyboard will be shown or when the keyboard frame resizes (when switching between keyboards for example)
 
     window.addEventListener('native.keyboardshow', keyboardShowHandler);
 
